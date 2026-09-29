@@ -268,7 +268,7 @@ docs/             검증 기록, Codex 테스트 절차와 결과
 - **기준선은 작은 표본에서 나왔다.** 0.3·0.8·1,000자·1,500자는 이번 측정 세션들에서 정한 값이다. 다른 작업에서는 판단 로그의 점수를 보고 다시 맞춘다.
 - **Jev에 보내는 것:** 읽기 게이트는 대화 일부와 파일 개요를 보낸다. retain은 압축 때 대화 전체(도구 결과는 크기만)와 도구 호출 입력을 보낸다. verbatim도 같다. prune의 Jev 단계와 retain `jev`는 도구 출력을 보낸다. 비밀처럼 보이는 출력은 원문 경로를 인용하지 않는다. 공개 가능한 작업에만 켠다.
 
-## 원본과 라이선스
+## 참조한 프로젝트
 
 - [jev-pruner](https://github.com/tamaratran/jev-pruner) (MIT): Jev 클라이언트, 청크 트리머, 보존 규칙. `npm run setup`이 `070d4af`를 받는다.
 - [fast-jev-compaction](https://github.com/tamaratran/fast-jev-compaction) (MIT): 호출 짝짓기, 고정, state 맞춤, 판단 적용을 그대로 쓴다. `e3f262a`를 받는다. `turn.complete` 60% 자동 압축과 userConfig의 API 키는 가져오지 않았다.
