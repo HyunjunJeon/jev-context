@@ -74,7 +74,7 @@ node scripts/e2e-compact.mjs branches verbatim,upstream,summary   # 같은 세�
 
 ### 압축 비교: 내장 요약 대 verbatim (라이브, 2026-09-29)
 
-9/26 실험(`context-demo/output/compaction-cache`)과 같은 구성이다. Sonnet 5.5가 7턴 동안 `ledger-tool` 명령 14개를 실행했고(출력마다 약 22k자), 마지막 컨텍스트는 173k 토큰이었다. 이 세션을 방식별로 fork해 `/compact`한 뒤, 도구 없이 인수인계 값 다섯 개(실패 테스트 이름, seed, BUNDLE 해시, RELEASE ID, ROLLBACK TOKEN)를 물었다. Jev는 라이브다. 각 fork는 압축 전에 "ok" 한 턴을 거친다(fork 직후 압축하면 PreCompact가 빈 transcript를 읽기 때문, 한계 참고).
+9/26 실험([2026-09-26-compaction-cache.md](2026-09-26-compaction-cache.md))과 같은 구성이다. Sonnet 5.5가 7턴 동안 `ledger-tool` 명령 14개를 실행했고(출력마다 약 22k자), 마지막 컨텍스트는 173k 토큰이었다. 이 세션을 방식별로 fork해 `/compact`한 뒤, 도구 없이 인수인계 값 다섯 개(실패 테스트 이름, seed, BUNDLE 해시, RELEASE ID, ROLLBACK TOKEN)를 물었다. Jev는 라이브다. 각 fork는 압축 전에 "ok" 한 턴을 거친다(fork 직후 압축하면 PreCompact가 빈 transcript를 읽기 때문, 한계 참고).
 
 기준 세션에서 어시스턴트가 스스로 적은 값은 test·seed·RELEASE·ROLLBACK 넷이다. **BUNDLE 해시는 도구 출력에만 있었다.**
 

@@ -1,5 +1,5 @@
 // Live comparison of the compaction engines on one long Claude Code session,
-// the 2026-09-26 setup (context-demo/output/compaction-cache) rebuilt here.
+// the 2026-09-26 setup (docs/2026-09-26-compaction-cache.md) rebuilt here.
 //   node scripts/e2e-compact.mjs base              7 turns, 14 × ~22k-char tool outputs, no plugin
 //   node scripts/e2e-compact.mjs branches [arms]   fork the base per arm: /compact and the hand-off
 //                                                  question in one process, then (verbatim) the
@@ -20,7 +20,8 @@ const bin = join(dir, 'bin');
 const truthPath = join(dir, 'truth.json');
 const statePath = join(dir, 'state.json');
 const model = process.env.E2E_MODEL ?? 'sonnet';
-const upstream = process.env.FAST_JEV_PLUGIN ?? resolve(root, '../context-demo/upstream/fast-jev-compaction');
+// fast-jev-compaction as published: the pinned clone `npm run setup` makes is the plugin itself.
+const upstream = process.env.FAST_JEV_PLUGIN ?? resolve(root, 'vendor/fast-jev-compaction');
 mkdirSync(work, { recursive: true });
 mkdirSync(bin, { recursive: true });
 // Outside the working directory: the agent can run the tool but not read its source.

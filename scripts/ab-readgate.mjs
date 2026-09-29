@@ -9,14 +9,17 @@ import { tmpdir } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
 
 const root = resolve(import.meta.dirname, '..');
-const seminar = resolve(root, '../..');
 const reps = Number(process.argv[2] ?? 1);
 const model = process.env.E2E_MODEL ?? 'sonnet';
+// Where each file sits in the scratch copy (the paths the prompts use) and
+// where it comes from. The two seminar documents are snapshots kept as
+// fixtures (2026-09-29), since the originals may change or go; README.md is
+// the current one, so `readme-sections` checks today's section names.
 const FILES = [
-  '2026-09/시연-3종-심층-가이드.md',
-  '2026-09/jev-loop-cases.md',
-  '2026-09/jev-context/README.md',
-  '2026-09/jev-context/vendor/jev-pruner/src',
+  ['2026-09/시연-3종-심층-가이드.md', 'scripts/fixtures/readgate/시연-3종-심층-가이드.md'],
+  ['2026-09/jev-loop-cases.md', 'scripts/fixtures/readgate/jev-loop-cases.md'],
+  ['2026-09/jev-context/README.md', 'README.md'],
+  ['2026-09/jev-context/vendor/jev-pruner/src', 'vendor/jev-pruner/src'],
 ];
 const TASKS = [
   { id: 'router-branches', prompt: '2026-09/시연-3종-심층-가이드.md 에서 Jev-Router 정책의 "네 갈림길"이 무엇인지 알려줘.', expect: [/0\.3/, /20,?000|2만|20k/i, /use opus|명시/i, /시간 ?초과|timeout|실패/i] },
@@ -26,9 +29,9 @@ const TASKS = [
 ];
 
 const work = mkdtempSync(join(tmpdir(), 'jev-readgate-ab-'));
-for (const f of FILES) {
-  mkdirSync(dirname(join(work, f)), { recursive: true });
-  cpSync(join(seminar, f), join(work, f), { recursive: true });
+for (const [to, from] of FILES) {
+  mkdirSync(dirname(join(work, to)), { recursive: true });
+  cpSync(join(root, from), join(work, to), { recursive: true });
 }
 
 function run(task, gate, rep) {

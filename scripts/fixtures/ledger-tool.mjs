@@ -1,6 +1,6 @@
 // Synthetic tool output for the compaction/cache experiment. Every command prints ~22k chars
 // of plausible noise; only a few lines matter later. `release` is one-time: its ids are random.
-// Copied from context-demo/output/compaction-cache (2026-09-26); the release ids now go to
+// Copied from the 2026-09-26 experiment (docs/2026-09-26-compaction-cache.md); the release ids now go to
 // LEDGER_TRUTH instead of a file beside the script.
 import { randomBytes } from 'node:crypto';
 import { writeFileSync } from 'node:fs';
