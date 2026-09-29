@@ -1,8 +1,6 @@
 # jev-context
 
-Claude Code와 Codex에서 쓰는 플러그인이다. 컨텍스트 창을 가볍게 유지해 **압축(compaction)을 최대한 늦추고**, 압축이 오더라도 필요한 원문이 살아남게 한다. 판단이 필요한 몇 곳에서만 TypeSafe의 **Jev** 모델을 부른다. [jev-pruner](https://github.com/tamaratran/jev-pruner)(출력 가지치기)와 [fast-jev-compaction](https://github.com/tamaratran/fast-jev-compaction)(압축 판단)을 하나로 합쳐 다시 설계했다.
-
-원칙은 셋이다.
+Claude Code와 Codex에서 쓰는 플러그인이다. 컨텍스트 창을 가볍게 유지해 **압축(compaction)을 최대한 늦추고**, 압축이 오더라도 필요한 원문이 살아남게 한다. 판단이 필요한 몇 곳에서만 TypeSafe의 **Jev** 모델을 부른다.
 
 1. **들어오는 순간에 한 번 정하고, 그 뒤로는 고치지 않는다.** 이미 보낸 기록을 고치면 프롬프트 캐시가 깨진다. Opus 5.5·Sonnet 5.5에서는 그 뒤의 thinking 블록도 무효가 된다(preserved thinking).
 2. **숨기기 전에 원문을 먼저 저장한다.** 줄인 결과에는 항상 원문 경로가 붙는다.
