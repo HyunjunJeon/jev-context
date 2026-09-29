@@ -1,0 +1,8 @@
+node_modules/
+vendor/
+logs/
+.state/
+.jev-context/
+tsconfig.json
+.claude-plugin/types/
+package/

@@ -1,0 +1,7 @@
+{
+  "name": "jev-context",
+  "version": "0.1.0",
+  "description": "Jev keeps the context window lean: prunes shell output, caps subagent reports, carries exact facts across compaction.",
+  "skills": "./codex/skills",
+  "hooks": "./codex/hooks.json"
+}

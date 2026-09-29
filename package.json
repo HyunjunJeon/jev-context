@@ -1,0 +1,20 @@
+{
+  "name": "jev-context",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Keep the Claude Code / Codex context window lean with Jev so compaction comes later: prune tool output on entry, cap subagent reports, keep exact facts across compaction, compact only when the cache is cold.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "doctor": "node scripts/doctor.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "replay": "node scripts/replay.mjs",
+    "e2e:claude": "node scripts/e2e-claude.mjs",
+    "e2e:codex": "node scripts/e2e-codex.mjs",
+    "package": "node scripts/package.mjs"
+  }
+}

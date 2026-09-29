@@ -1,0 +1,6 @@
+{
+  "name": "jev-context-codex",
+  "plugins": [
+    { "name": "jev-context", "source": { "source": "local", "path": "." } }
+  ]
+}

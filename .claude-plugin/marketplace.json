@@ -1,0 +1,14 @@
+{
+  "name": "jev-context-local",
+  "description": "Local marketplace for the jev-context plugin (Seminar 2026-09).",
+  "owner": {
+    "name": "local"
+  },
+  "plugins": [
+    {
+      "name": "jev-context",
+      "source": "./",
+      "description": "Jev context pruning, report budgets and compaction retention"
+    }
+  ]
+}

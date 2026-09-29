@@ -1,0 +1,9 @@
+{
+  "name": "jev-context",
+  "version": "0.1.0",
+  "description": "Jev keeps the context window lean so compaction comes later: prunes tool output on entry, caps subagent reports, carries exact facts across compaction, compacts when the cache is cold.",
+  "license": "MIT",
+  "author": {
+    "name": "jhj"
+  }
+}
